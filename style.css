@@ -1,0 +1,55 @@
+* {
+  margin: 0 auto;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: #888;
+  height: 100vh;
+}
+
+/*** DIV flipping styles ***/
+
+#container-1, #container-2 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.hide {
+  animation: hide 0.25s ease-in;
+}
+
+.show {
+  animation: show 0.25s ease-in;
+}
+
+#red-1, #red-2 {
+  position: absolute;
+  padding: 1em;
+  background-color: red;
+  transform: rotateY(0deg);
+}
+
+#red-1 h1, #red-2 h1, #blue-1 h1, #blue-2 h1 {
+  background-color: yellow;
+}
+
+#blue-1, #blue-2  {
+  position: absolute;
+  padding: 1em;
+  background-color: blue;
+  transform: rotateY(90deg);
+}
+
+@keyframes hide {
+  0% { transform: rotateY(0deg) }
+  100% { transform: rotateY(90deg) }
+}
+
+@keyframes show {
+  0% { transform: rotateY(90deg) }
+  100% { transform: rotateY(0deg) }
+}
